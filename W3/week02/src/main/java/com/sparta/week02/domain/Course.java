@@ -3,6 +3,7 @@ package com.sparta.week02.domain;
 import lombok.NoArgsConstructor;
 
 import javax.persistence.*;
+import java.util.List;
 
 @NoArgsConstructor // 기본생성자를 대신 생성해줍니다.
 @Entity // 테이블임을 나타냅니다.
@@ -33,5 +34,11 @@ public class Course extends Timestamped{
 
     public String getTutor() {
         return this.tutor;
+    }
+
+    //업데이트 메소드 추가
+    public void update(Course course) {
+        this.title = course.title;
+        this.tutor = course.tutor;
     }
 }
